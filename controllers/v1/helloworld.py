@@ -3,7 +3,7 @@
 from json import dumps
 from falcon import HTTP_200, before
 from hooks.auth import validate_user
-from hooks.validators.api.v1 import helloworld_validators
+from hooks.validators.controllers.v1 import helloworld_validators
 
 
 class HelloWorld:
