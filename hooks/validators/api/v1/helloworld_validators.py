@@ -1,6 +1,6 @@
 # created by sangeet verma for project falcon_basics
 # on 31/10/17 :: 8:32 AM
-import controllers.v1.validators as v
+import hooks.validators.api as v
 
 schema = {
     'phone': {
