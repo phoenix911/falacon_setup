@@ -2,6 +2,7 @@
 # on 12/11/17 :: 3:37 AM
 from falcon import HTTPUnauthorized
 
+
 class AuthMiddleWare(object):
 
     def process_request(self, req, params):
@@ -20,8 +21,15 @@ class AuthMiddleWare(object):
                 description='check your token'
             )
 
-    def _token_is_valid(self, token, account_id):
-        if int(token) == int(account_id):
+    def _token_is_valid(self, token, account_key):
+        """
+        update this function to match your authentication logic
+        :param token: user token
+        :param account_key: user key
+        :return: boolean ,
+        True is successful validation
+        """
+        if int(token) == int(account_key):
             return True
         else:
             return False
