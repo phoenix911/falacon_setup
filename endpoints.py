@@ -3,6 +3,9 @@
 
 from falcon import API
 from controllers.v1 import helloworld
+import authentication
 
-api = API()
+api = API(
+    middleware=[authentication.AuthMiddleWare()]
+)
 api.add_route('/hello', helloworld.HelloWorld())
