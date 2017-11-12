@@ -65,4 +65,15 @@ def validate_date_time(field, value, error):
 
 
 def bad_request(validator_):
-    return HTTPBadRequest(title="wrong params send", description=validator_.errors)
+    return HTTPBadRequest(title="unaddressable request", description=validator_.errors)
+
+
+def validate_params(schema):
+    validator__ = Validator(schema)
+
+    def validate_schema(req, resp, resource, params):
+        if not validator__.validate(req.params):
+            raise bad_request(validator__)
+
+    return validate_schema
+

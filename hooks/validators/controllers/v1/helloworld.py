@@ -30,9 +30,5 @@ schema = {
     }
 }
 
-validator = v.Validator(schema)
 
 
-def helloworld(req, resp, resource, params):
-    if not validator.validate(req.params):
-        raise v.bad_request(validator)
