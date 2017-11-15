@@ -2,7 +2,7 @@
 # on 31/10/17 :: 8:32 AM
 import validators.controllers as v
 
-schema = {
+schema_post = {
     'phone': {
         v.type_: v.type_int,
         v.maxLength: 10,
@@ -30,5 +30,11 @@ schema = {
     }
 }
 
-
-
+schema_put = {
+    'phone': {
+        v.type_: v.type_int,
+        v.coerce: int
+    }, 'number': {
+        v.validator: v.validate_date
+    }
+}
