@@ -3,8 +3,8 @@
 from cerberus import Validator
 from falcon import HTTPBadRequest
 from re import compile
-from datetime import date, datetime
-from project_variables import date_format, time_format, date_time_format
+from datetime import datetime
+from setup import date_format, time_format, date_time_format
 
 type_ = "type"
 type_int = "integer"
