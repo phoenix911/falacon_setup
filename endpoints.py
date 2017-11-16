@@ -3,9 +3,11 @@
 
 from falcon import API
 from middlewares import auth
+from middlewares import logger
 from controllers.v1 import helloworld
 
 api = API(
     # middleware=[auth.AuthMiddleWare()]
+    middleware=[logger.ResponseLoggerMiddleware()]
 )
 api.add_route('/hello', helloworld.HelloWorld())
