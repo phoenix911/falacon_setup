@@ -15,7 +15,7 @@ class HelloWorld:
         resp.status = HTTP_200
         resp.body = dumps({"get": "working"})
 
-    # @before(validate_user)
+    @before(validate_user)
     @before(validate_params(schema_post))
     def on_post(self, req, resp):
         resp.status = HTTP_200
